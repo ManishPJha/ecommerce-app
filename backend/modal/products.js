@@ -22,6 +22,7 @@ const productSchema = mongoose.Schema({
     },
     modifiedDate: {
         type: Date,
+        default: Date.now
     }
 })
 

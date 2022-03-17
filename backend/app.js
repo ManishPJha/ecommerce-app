@@ -3,8 +3,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 const bodyParser = require("body-parser");
-const router = require("express").Router();
 const productRouter = require("./routes/product.routes")
+const userRouter = require("./routes/user.routes")
 
 const PORT = process.env.PORT || 7000;
 
@@ -24,7 +24,9 @@ app.use(require("cors")());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use("/api/v1/", productRouter);
+//Routes
+app.use("/api/v1/product/", productRouter);
+app.use("/api/v1/user/", userRouter);
 
 app.listen(
     PORT, () => console.log(`server is running on ${PORT}`)

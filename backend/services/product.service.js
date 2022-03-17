@@ -10,7 +10,6 @@ class productService {
                 description: data.description,
                 price: data.price,
                 rating: data.rating,
-                modifiedDate: data.modifiedDate
             }
             const _create = await new db(productData).save();
             return _create;
@@ -28,6 +27,7 @@ class productService {
                 description: data.description,
                 price: data.price,
                 rating: data.rating,
+                modifiedDate: data.modifiedDate
             }
             // const _update = await db.findByIdAndUpdate
             // const _update = await db.updateOne(produsctData, {
