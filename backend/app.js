@@ -27,6 +27,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //Routes
 app.use("/api/v1/product/", productRouter);
 app.use("/api/v1/user/", userRouter);
+app.use("/api/v1/auth/", userRouter);
 
 app.listen(
     PORT, () => console.log(`server is running on ${PORT}`)
