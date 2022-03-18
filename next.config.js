@@ -1,15 +1,20 @@
+const path = require('path');
+
 module.exports = {
-  reactStrictMode: true,
-  env: {
-    apiKey: 'AIzaSyD-T0BI0_TkSM4zger4kZGgkk0x8aKuhSQ',
-    authDomain: "ecommerceapp-20948.firebaseapp.com",
-    projectId: "ecommerceapp-20948",
-    storageBucket: "ecommerceapp-20948.appspot.com",
-    messagingSenderId: "300540959269",
-    appId: "1:300540959269:web:ac9275d2230415d8b13dcc",
-    measurementId: "G-N14907MZ0D"
+  trailingSlash: true,
+  reactStrictMode: false,
+  experimental: {
+    esmExternals: false,
+    jsconfigPaths: true // enables it for both jsconfig.json and tsconfig.json
   },
   images: {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
+  webpack: config => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      apexcharts: path.resolve(__dirname, './node_modules/apexcharts-clevision')
+    }
+    return config
+  }
 }
